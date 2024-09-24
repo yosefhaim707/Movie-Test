@@ -86,9 +86,9 @@ function displayMovies(movies: JSON): void {
     
 }
 
-const button = document.getElementById('show-button');
+const button = document.getElementById('show-button') as HTMLButtonElement;
 
-button?.addEventListener('click', () => {
+button.addEventListener('click', () => {
     const select = document.getElementById('genre-selector') as HTMLSelectElement;
     if (select.value) {
         GetByGenre(select.value);

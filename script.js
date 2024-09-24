@@ -110,4 +110,10 @@ function displayMovies(movies) {
         createRow(movie);
     }
 }
-GetByGenre('drama');
+var button = document.getElementById('show-button');
+button === null || button === void 0 ? void 0 : button.addEventListener('click', function () {
+    var select = document.getElementById('genre-selector');
+    if (select.value) {
+        GetByGenre(select.value);
+    }
+});
