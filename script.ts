@@ -6,7 +6,7 @@ interface Movie {
 }
 
 function createRow(movie: Movie): void {
-    const tableBody = document.getElementById('table-body');
+    const tableBody = document.getElementById('table-body') as HTMLTableElement;
     const row = document.createElement('tr');
 
     const titleCell = document.createElement('td');
@@ -86,12 +86,16 @@ function displayMovies(movies: JSON): void {
     
 }
 
-const button = document.getElementById('show-button') as HTMLButtonElement;
-
-button.addEventListener('click', () => {
-    const select = document.getElementById('genre-selector') as HTMLSelectElement;
-    if (select.value) {
-        GetByGenre(select.value);
-    }
-
-})
+document.addEventListener('DOMContentLoaded', function () {
+    
+    const button = document.getElementById('show-button') as HTMLButtonElement;
+    
+    button.addEventListener('click', (event) => {
+        const tableBody = document.getElementById('table-body') as HTMLTableElement;
+        tableBody.innerHTML = ''
+        const select = document.getElementById('genre-selector') as HTMLSelectElement;
+        if (select.value) {
+            GetByGenre(select.value);
+        }
+    });
+});

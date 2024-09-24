@@ -110,10 +110,14 @@ function displayMovies(movies) {
         createRow(movie);
     }
 }
-var button = document.getElementById('show-button');
-button === null || button === void 0 ? void 0 : button.addEventListener('click', function () {
-    var select = document.getElementById('genre-selector');
-    if (select.value) {
-        GetByGenre(select.value);
-    }
+document.addEventListener('DOMContentLoaded', function () {
+    var button = document.getElementById('show-button');
+    button.addEventListener('click', function (event) {
+        var tableBody = document.getElementById('table-body');
+        tableBody.innerHTML = '';
+        var select = document.getElementById('genre-selector');
+        if (select.value) {
+            GetByGenre(select.value);
+        }
+    });
 });
