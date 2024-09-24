@@ -86,4 +86,12 @@ function displayMovies(movies: JSON): void {
     
 }
 
-GetByGenre('drama')
+const button = document.getElementById('show-button');
+
+button?.addEventListener('click', () => {
+    const select = document.getElementById('genre-selector') as HTMLSelectElement;
+    if (select.value) {
+        GetByGenre(select.value);
+    }
+
+})
