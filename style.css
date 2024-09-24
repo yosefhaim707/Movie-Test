@@ -1,0 +1,19 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    background-color: brown;
+    color: azure;
+}
+
+table, tbody {
+    background-color: brown;
+    color: azure;
+    gap: 10px;
+}
